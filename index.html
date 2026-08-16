@@ -1,175 +1,244 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Soccer Score</title>
+<title>Soccer Score - Home</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: white;
-            color: #111827;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #111827;
+}
 
-        header {
-            background: #1261d8;
-            color: white;
-            padding: 22px 15px;
-            text-align: center;
-        }
+/* HEADER */
 
-        header h1 {
-            font-size: 30px;
-        }
+header {
+    background: #1261d8;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
 
-        header p {
-            margin-top: 6px;
-        }
+header h1 {
+    font-size: 32px;
+}
 
-        nav {
-            display: flex;
-            background: white;
-            border-bottom: 2px solid #1261d8;
-            overflow-x: auto;
-        }
+header p {
+    margin-top: 7px;
+    font-size: 16px;
+}
 
-        nav a {
-            padding: 16px 20px;
-            color: #111827;
-            text-decoration: none;
-            font-weight: bold;
-            white-space: nowrap;
-        }
+/* NAVIGATION */
 
-        nav a:hover {
-            background: #eaf2ff;
-            color: #1261d8;
-        }
+nav {
+    display: flex;
+    background: white;
+    border-bottom: 2px solid #1261d8;
+    overflow-x: auto;
+}
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
+nav a {
+    color: #111827;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 16px 20px;
+    white-space: nowrap;
+}
 
-        .page-title {
-            margin-bottom: 5px;
-            font-size: 25px;
-        }
+nav a:hover {
+    background: #eaf2ff;
+    color: #1261d8;
+}
 
-        .date {
-            color: #666;
-            margin-bottom: 20px;
-        }
+/* MAIN */
 
-        .competition {
-            margin-top: 25px;
-            margin-bottom: 10px;
-            color: #1261d8;
-            font-size: 18px;
-            font-weight: bold;
-        }
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 20px;
+}
 
-        .fixture {
-            display: block;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            margin-bottom: 14px;
-            padding: 20px;
-            text-decoration: none;
-            color: #111827;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
+.page-title {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
 
-        .fixture:hover {
-            border-color: #1261d8;
-        }
+.description {
+    color: #666;
+    margin-bottom: 25px;
+}
 
-        .teams {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-        }
+/* SECTION */
 
-        .team {
-            width: 35%;
-            font-weight: bold;
-        }
+.section-title {
+    margin: 30px 0 15px;
+    color: #1261d8;
+}
 
-        .score-area {
-            width: 25%;
-        }
+/* FIXTURE CARD */
 
-        .score {
-            font-size: 27px;
-            font-weight: bold;
-        }
+.fixture {
+    display: block;
+    text-decoration: none;
+    color: #111827;
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
 
-        .time {
-            color: #666;
-            margin-top: 5px;
-        }
+.fixture:hover {
+    box-shadow: 0 5px 16px rgba(0,0,0,0.14);
+}
 
-        .live {
-            display: inline-block;
-            color: white;
-            background: #e11d48;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 6px;
-        }
+.league {
+    color: #1261d8;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
 
-        .status {
-            text-align: center;
-            margin-top: 12px;
-            color: #1261d8;
-            font-size: 14px;
-            font-weight: bold;
-        }
+.match {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
 
-        footer {
-            margin-top: 40px;
-            background: #1261d8;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
+.team {
+    width: 35%;
+    font-weight: bold;
+}
 
-        @media (max-width: 600px) {
-            nav {
-                justify-content: flex-start;
-            }
+.home-team {
+    text-align: right;
+}
 
-            .team {
-                font-size: 14px;
-            }
+.away-team {
+    text-align: left;
+}
 
-            .score {
-                font-size: 23px;
-            }
-        }
-    </style>
+.score {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    min-width: 70px;
+}
+
+.time {
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.status {
+    color: #1261d8;
+    font-weight: bold;
+}
+
+/* LIVE BUTTON */
+
+.live-box {
+    background: #111827;
+    color: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.live-box h2 {
+    margin-bottom: 8px;
+}
+
+.live-box p {
+    color: #d1d5db;
+    margin-bottom: 15px;
+}
+
+.live-button {
+    display: inline-block;
+    background: #1261d8;
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* INFORMATION */
+
+.info {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 25px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.info h2 {
+    margin-bottom: 10px;
+}
+
+.info p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+
+footer {
+    background: #1261d8;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    .team {
+        font-size: 14px;
+    }
+
+    .score {
+        font-size: 20px;
+    }
+}
+</style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
     <h1>SOCCER SCORE</h1>
-    <p>Live Football Scores & Fixtures</p>
+    <p>Football Scores, News & Updates</p>
 </header>
+
+
+<!-- NAVIGATION -->
 
 <nav>
     <a href="index.html">Home</a>
@@ -178,52 +247,63 @@
     <a href="competitions.html">Competitions</a>
 </nav>
 
-<main class="container">
+
+<!-- MAIN CONTENT -->
+
+<div class="container">
 
     <h2 class="page-title">Today's Fixtures</h2>
 
-    <p class="date">
-        Live scores will update automatically
+    <p class="description">
+        Follow today's football matches and their scores.
     </p>
+
+
+    <!-- LIVE MATCH AREA -->
+
+    <div class="live-box">
+
+        <h2>🔴 Live Matches</h2>
+
+        <p>
+            Matches currently being played will appear on the Live page.
+        </p>
+
+        <a class="live-button" href="live.html">
+            View Live Matches →
+        </a>
+
+    </div>
+
 
     <!-- PREMIER LEAGUE -->
 
-    <div class="competition">
-        Premier League
-    </div>
+    <h2 class="section-title">🏴 Premier League</h2>
 
     <a class="fixture" href="match.html">
 
-        <div class="teams">
+        <div class="league">
+            Premier League
+        </div>
 
-            <div class="team">
-                Arsenal
+        <div class="match">
+
+            <div class="team home-team">
+                Home Team
             </div>
 
-            <div class="score-area">
-
-                <span class="live">
-                    LIVE
-                </span>
-
-                <div class="score">
-                    2 - 1
-                </div>
-
-                <div class="time">
-                    67'
-                </div>
-
+            <div class="score">
+                0 - 0
             </div>
 
-            <div class="team">
-                Chelsea
+            <div class="team away-team">
+                Away Team
             </div>
 
         </div>
 
-        <div class="status">
-            Tap for Match Centre →
+        <div class="time">
+            Today's Match • <span class="status">Scheduled</span>
         </div>
 
     </a>
@@ -231,47 +311,193 @@
 
     <!-- LA LIGA -->
 
-    <div class="competition">
-        La Liga
-    </div>
+    <h2 class="section-title">🇪🇸 La Liga</h2>
 
     <a class="fixture" href="match.html">
 
-        <div class="teams">
+        <div class="league">
+            La Liga
+        </div>
 
-            <div class="team">
-                Barcelona
+        <div class="match">
+
+            <div class="team home-team">
+                Home Team
             </div>
 
-            <div class="score-area">
-
-                <div class="score">
-                    18:30
-                </div>
-
-                <div class="time">
-                    Kick-off
-                </div>
-
+            <div class="score">
+                0 - 0
             </div>
 
-            <div class="team">
-                Sevilla
+            <div class="team away-team">
+                Away Team
             </div>
 
         </div>
 
-        <div class="status">
-            Tap for Match Centre →
+        <div class="time">
+            Today's Match • <span class="status">Scheduled</span>
         </div>
 
     </a>
 
-</main>
+
+    <!-- SERIE A -->
+
+    <h2 class="section-title">🇮🇹 Serie A</h2>
+
+    <a class="fixture" href="match.html">
+
+        <div class="league">
+            Serie A
+        </div>
+
+        <div class="match">
+
+            <div class="team home-team">
+                Home Team
+            </div>
+
+            <div class="score">
+                0 - 0
+            </div>
+
+            <div class="team away-team">
+                Away Team
+            </div>
+
+        </div>
+
+        <div class="time">
+            Today's Match • <span class="status">Scheduled</span>
+        </div>
+
+    </a>
+
+
+    <!-- BUNDESLIGA -->
+
+    <h2 class="section-title">🇩🇪 Bundesliga</h2>
+
+    <a class="fixture" href="match.html">
+
+        <div class="league">
+            Bundesliga
+        </div>
+
+        <div class="match">
+
+            <div class="team home-team">
+                Home Team
+            </div>
+
+            <div class="score">
+                0 - 0
+            </div>
+
+            <div class="team away-team">
+                Away Team
+            </div>
+
+        </div>
+
+        <div class="time">
+            Today's Match • <span class="status">Scheduled</span>
+        </div>
+
+    </a>
+
+
+    <!-- LIGUE 1 -->
+
+    <h2 class="section-title">🇫🇷 Ligue 1</h2>
+
+    <a class="fixture" href="match.html">
+
+        <div class="league">
+            Ligue 1
+        </div>
+
+        <div class="match">
+
+            <div class="team home-team">
+                Home Team
+            </div>
+
+            <div class="score">
+                0 - 0
+            </div>
+
+            <div class="team away-team">
+                Away Team
+            </div>
+
+        </div>
+
+        <div class="time">
+            Today's Match • <span class="status">Scheduled</span>
+        </div>
+
+    </a>
+
+
+    <!-- OTHER COMPETITIONS -->
+
+    <h2 class="section-title">🌍 Other Competitions</h2>
+
+    <a class="fixture" href="match.html">
+
+        <div class="league">
+            Other League / Cup
+        </div>
+
+        <div class="match">
+
+            <div class="team home-team">
+                Home Team
+            </div>
+
+            <div class="score">
+                0 - 0
+            </div>
+
+            <div class="team away-team">
+                Away Team
+            </div>
+
+        </div>
+
+        <div class="time">
+            Today's Match • <span class="status">Scheduled</span>
+        </div>
+
+    </a>
+
+
+    <!-- ABOUT -->
+
+    <div class="info">
+
+        <h2>⚽ Soccer Score</h2>
+
+        <p>
+            Follow football fixtures, scores, live match updates,
+            news, competitions and detailed match information.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
 
 <footer>
+
     <p>© 2026 Soccer Score</p>
-    <p>Football information, scores and news</p>
+
+    <p>Football Scores, News & Updates</p>
+
 </footer>
 
 </body>
