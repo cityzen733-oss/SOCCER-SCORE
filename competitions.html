@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Competitions - Soccer Score</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #111827;
+}
+
+header {
+    background: #1261d8;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+header p {
+    margin-top: 7px;
+}
+
+nav {
+    display: flex;
+    background: white;
+    border-bottom: 2px solid #1261d8;
+    overflow-x: auto;
+}
+
+nav a {
+    padding: 16px 20px;
+    color: #111827;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    color: #1261d8;
+    background: #eaf2ff;
+}
+
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding: 20px;
+}
+
+.page-title {
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.category-title {
+    color: #1261d8;
+    margin: 28px 0 14px;
+}
+
+.competitions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.competition {
+    display: block;
+    background: white;
+    color: #111827;
+    text-decoration: none;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    transition: 0.2s;
+}
+
+.competition:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.competition-name {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.competition-info {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.arrow {
+    color: #1261d8;
+    float: right;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 40px;
+    background: #1261d8;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+@media (max-width: 600px) {
+
+    .competitions {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>SOCCER SCORE</h1>
+    <p>Leagues & Competitions</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="live.html">Live</a>
+    <a href="news.html">News</a>
+    <a href="competitions.html">Competitions</a>
+</nav>
+
+<div class="container">
+
+    <h2 class="page-title">Competitions</h2>
+
+    <p class="description">
+        Follow league tables, fixtures, results and competition information
+        from around the world.
+    </p>
+
+
+    <!-- TOP EUROPEAN LEAGUES -->
+
+    <h2 class="category-title">🇪🇺 Top European Leagues</h2>
+
+    <div class="competitions">
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏴 Premier League
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                England • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇪🇸 La Liga
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Spain • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇮🇹 Serie A
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Italy • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇩🇪 Bundesliga
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Germany • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇫🇷 Ligue 1
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                France • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇳🇱 Eredivisie
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Netherlands • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇵🇹 Primeira Liga
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Portugal • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇹🇷 Süper Lig
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Turkey • Standings • Fixtures • Results
+            </div>
+        </a>
+
+    </div>
+
+
+    <!-- OTHER EUROPEAN LEAGUES -->
+
+    <h2 class="category-title">🌍 Other European Leagues</h2>
+
+    <div class="competitions">
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇧🇪 Belgian Pro League
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Belgium • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇬🇷 Super League Greece
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Greece • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇷🇺 Russian Premier League
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Russia • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇺🇦 Ukrainian Premier League
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Ukraine • Standings • Fixtures • Results
+            </div>
+        </a>
+
+    </div>
+
+
+    <!-- AFRICAN LEAGUES -->
+
+    <h2 class="category-title">🌍 African Leagues</h2>
+
+    <div class="competitions">
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇳🇬 Nigeria Premier Football League
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Nigeria • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇪🇬 Egyptian Premier League
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Egypt • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇿🇦 South African Premiership
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                South Africa • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇲🇦 Botola Pro
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Morocco • Standings • Fixtures • Results
+            </div>
+        </a>
+
+    </div>
+
+
+    <!-- AMERICAS -->
+
+    <h2 class="category-title">🌎 Americas</h2>
+
+    <div class="competitions">
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇧🇷 Brasileirão
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Brazil • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇦🇷 Argentine Primera División
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Argentina • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇺🇸 MLS
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                USA • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇲🇽 Liga MX
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Mexico • Standings • Fixtures • Results
+            </div>
+        </a>
+
+    </div>
+
+
+    <!-- ASIA -->
+
+    <h2 class="category-title">🌏 Asian Leagues</h2>
+
+    <div class="competitions">
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇸🇦 Saudi Pro League
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Saudi Arabia • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇯🇵 J1 League
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Japan • Standings • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🇰🇷 K League 1
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                South Korea • Standings • Fixtures • Results
+            </div>
+        </a>
+
+    </div>
+
+
+    <!-- UEFA CLUB COMPETITIONS -->
+
+    <h2 class="category-title">🏆 UEFA Club Competitions</h2>
+
+    <div class="competitions">
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 UEFA Champions League
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Europe • Fixtures • Results • Standings
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 UEFA Europa League
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Europe • Fixtures • Results • Standings
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 UEFA Conference League
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Europe • Fixtures • Results • Standings
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 UEFA Super Cup
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Europe • Results • Competition information
+            </div>
+        </a>
+
+    </div>
+
+
+    <!-- AFRICAN CLUB COMPETITIONS -->
+
+    <h2 class="category-title">🌍 African Club Competitions</h2>
+
+    <div class="competitions">
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 CAF Champions League
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Africa • Fixtures • Results • Standings
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 CAF Confederation Cup
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Africa • Fixtures • Results • Standings
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 CAF Super Cup
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Africa • Results • Competition information
+            </div>
+        </a>
+
+    </div>
+
+
+    <!-- DOMESTIC CUPS -->
+
+    <h2 class="category-title">🏆 Major Domestic Cups</h2>
+
+    <div class="competitions">
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 FA Cup
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                England • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 EFL Cup
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                England • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 Copa del Rey
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Spain • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 Coppa Italia
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Italy • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 DFB-Pokal
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Germany • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 Coupe de France
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                France • Fixtures • Results
+            </div>
+        </a>
+
+    </div>
+
+
+    <!-- INTERNATIONAL COMPETITIONS -->
+
+    <h2 class="category-title">🌎 International Competitions</h2>
+
+    <div class="competitions">
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 FIFA World Cup
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                International • Fixtures • Results • Standings
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 Africa Cup of Nations
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Africa • Fixtures • Results • Standings
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 UEFA European Championship
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                Europe • Fixtures • Results • Standings
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 Copa América
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                South America • Fixtures • Results • Standings
+            </div>
+        </a>
+
+    </div>
+
+
+    <!-- INTERNATIONAL CLUB COMPETITIONS -->
+
+    <h2 class="category-title">🌍 International Club Competitions</h2>
+
+    <div class="competitions">
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 FIFA Club World Cup
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                World • Fixtures • Results • Standings
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 Copa Libertadores
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                South America • Fixtures • Results
+            </div>
+        </a>
+
+        <a class="competition" href="#">
+            <div class="competition-name">
+                🏆 Copa Sudamericana
+                <span class="arrow">→</span>
+            </div>
+            <div class="competition-info">
+                South America • Fixtures • Results
+            </div>
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Soccer Score</p>
+    <p>Football scores, news and competitions</p>
+</footer>
+
+</body>
+</html>
