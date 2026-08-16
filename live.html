@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Live Matches - Soccer Score</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #111827;
+}
+
+header {
+    background: #1261d8;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+header p {
+    margin-top: 7px;
+}
+
+nav {
+    display: flex;
+    background: white;
+    border-bottom: 2px solid #1261d8;
+    overflow-x: auto;
+}
+
+nav a {
+    padding: 16px 20px;
+    color: #111827;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    color: #1261d8;
+    background: #eaf2ff;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.live-title {
+    color: #e11d48;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #e11d48;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.league {
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.league-name {
+    background: #eaf2ff;
+    color: #1261d8;
+    padding: 14px;
+    font-weight: bold;
+}
+
+.match {
+    display: block;
+    text-decoration: none;
+    color: #111827;
+    padding: 20px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.match:last-child {
+    border-bottom: none;
+}
+
+.teams {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.team {
+    width: 35%;
+    font-weight: bold;
+}
+
+.score-area {
+    width: 30%;
+}
+
+.live {
+    display: inline-block;
+    background: #e11d48;
+    color: white;
+    padding: 4px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.score {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.minute {
+    color: #e11d48;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.events {
+    text-align: center;
+    margin-top: 12px;
+    color: #666;
+    font-size: 13px;
+}
+
+footer {
+    margin-top: 40px;
+    background: #1261d8;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>SOCCER SCORE</h1>
+    <p>Live Football Scores & Updates</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="live.html">Live</a>
+    <a href="news.html">News</a>
+    <a href="competitions.html">Competitions</a>
+</nav>
+
+<div class="container">
+
+    <h2>Live Matches</h2>
+
+    <p class="description">
+        Follow matches currently being played.
+    </p>
+
+    <div class="live-title">
+        <span class="dot"></span>
+        LIVE NOW
+    </div>
+
+
+    <!-- PREMIER LEAGUE -->
+
+    <div class="league">
+
+        <div class="league-name">
+            Premier League
+        </div>
+
+        <a class="match" href="match.html">
+
+            <div class="teams">
+
+                <div class="team">
+                    Arsenal
+                </div>
+
+                <div class="score-area">
+
+                    <span class="live">
+                        LIVE
+                    </span>
+
+                    <div class="score">
+                        2 - 1
+                    </div>
+
+                    <div class="minute">
+                        67'
+                    </div>
+
+                </div>
+
+                <div class="team">
+                    Chelsea
+                </div>
+
+            </div>
+
+            <div class="events">
+                ⚽ 23' &nbsp; ⚽ 32' &nbsp; 🟨 58'
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- LA LIGA -->
+
+    <div class="league">
+
+        <div class="league-name">
+            La Liga
+        </div>
+
+        <a class="match" href="match.html">
+
+            <div class="teams">
+
+                <div class="team">
+                    Barcelona
+                </div>
+
+                <div class="score-area">
+
+                    <span class="live">
+                        LIVE
+                    </span>
+
+                    <div class="score">
+                        1 - 0
+                    </div>
+
+                    <div class="minute">
+                        34'
+                    </div>
+
+                </div>
+
+                <div class="team">
+                    Sevilla
+                </div>
+
+            </div>
+
+            <div class="events">
+                ⚽ 21'
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- SERIE A -->
+
+    <div class="league">
+
+        <div class="league-name">
+            Serie A
+        </div>
+
+        <a class="match" href="match.html">
+
+            <div class="teams">
+
+                <div class="team">
+                    Inter
+                </div>
+
+                <div class="score-area">
+
+                    <span class="live">
+                        LIVE
+                    </span>
+
+                    <div class="score">
+                        1 - 1
+                    </div>
+
+                    <div class="minute">
+                        74'
+                    </div>
+
+                </div>
+
+                <div class="team">
+                    Milan
+                </div>
+
+            </div>
+
+            <div class="events">
+                ⚽ 42' &nbsp; ⚽ 69'
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- BUNDESLIGA -->
+
+    <div class="league">
+
+        <div class="league-name">
+            Bundesliga
+        </div>
+
+        <a class="match" href="match.html">
+
+            <div class="teams">
+
+                <div class="team">
+                    Bayern
+                </div>
+
+                <div class="score-area">
+
+                    <span class="live">
+                        LIVE
+                    </span>
+
+                    <div class="score">
+                        3 - 2
+                    </div>
+
+                    <div class="minute">
+                        81'
+                    </div>
+
+                </div>
+
+                <div class="team">
+                    Dortmund
+                </div>
+
+            </div>
+
+            <div class="events">
+                ⚽ 15' &nbsp; ⚽ 38' &nbsp; 🟨 55'
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- LIGUE 1 -->
+
+    <div class="league">
+
+        <div class="league-name">
+            Ligue 1
+        </div>
+
+        <a class="match" href="match.html">
+
+            <div class="teams">
+
+                <div class="team">
+                    PSG
+                </div>
+
+                <div class="score-area">
+
+                    <span class="live">
+                        LIVE
+                    </span>
+
+                    <div class="score">
+                        0 - 0
+                    </div>
+
+                    <div class="minute">
+                        29'
+                    </div>
+
+                </div>
+
+                <div class="team">
+                    Lyon
+                </div>
+
+            </div>
+
+            <div class="events">
+                No goals yet
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- OTHER LEAGUES -->
+
+    <div class="league">
+
+        <div class="league-name">
+            Other Leagues & Competitions
+        </div>
+
+        <a class="match" href="match.html">
+
+            <div class="teams">
+
+                <div class="team">
+                    Team A
+                </div>
+
+                <div class="score-area">
+
+                    <span class="live">
+                        LIVE
+                    </span>
+
+                    <div class="score">
+                        0 - 1
+                    </div>
+
+                    <div class="minute">
+                        52'
+                    </div>
+
+                </div>
+
+                <div class="team">
+                    Team B
+                </div>
+
+            </div>
+
+            <div class="events">
+                ⚽ 52'
+            </div>
+
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Soccer Score</p>
+    <p>Football scores, news and updates</p>
+</footer>
+
+</body>
+</html>
