@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Match Centre - Soccer Score</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #111827;
+        }
+
+        header {
+            background: #1261d8;
+            color: white;
+            text-align: center;
+            padding: 22px 15px;
+        }
+
+        header h1 {
+            font-size: 30px;
+        }
+
+        header p {
+            margin-top: 6px;
+        }
+
+        nav {
+            display: flex;
+            background: white;
+            border-bottom: 2px solid #1261d8;
+            overflow-x: auto;
+        }
+
+        nav a {
+            padding: 16px 20px;
+            color: #111827;
+            text-decoration: none;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            color: #1261d8;
+            background: #eaf2ff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 15px;
+            color: #1261d8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .match-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .competition {
+            color: #1261d8;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .live {
+            display: inline-block;
+            background: #e11d48;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .teams {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .team {
+            width: 35%;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .score-area {
+            width: 30%;
+        }
+
+        .score {
+            font-size: 42px;
+            font-weight: bold;
+        }
+
+        .minute {
+            color: #e11d48;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .section {
+            background: white;
+            margin-top: 20px;
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+
+        .section h2 {
+            color: #1261d8;
+            margin-bottom: 15px;
+            font-size: 21px;
+        }
+
+        .event {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 5px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .event:last-child {
+            border-bottom: none;
+        }
+
+        .event-time {
+            font-weight: bold;
+            width: 45px;
+        }
+
+        .event-name {
+            flex: 1;
+        }
+
+        .lineups {
+            display: flex;
+            gap: 20px;
+        }
+
+        .lineup {
+            width: 50%;
+        }
+
+        .lineup h3 {
+            margin-bottom: 10px;
+            color: #1261d8;
+        }
+
+        .lineup p {
+            padding: 9px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stat {
+            margin-bottom: 18px;
+        }
+
+        .stat-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .stat-bar {
+            height: 8px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .stat-fill {
+            height: 100%;
+            background: #1261d8;
+        }
+
+        .possession {
+            width: 58%;
+        }
+
+        .rating {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 5px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rating-number {
+            color: #1261d8;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 40px;
+            background: #1261d8;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+
+            .team {
+                font-size: 16px;
+            }
+
+            .score {
+                font-size: 34px;
+            }
+
+            .lineups {
+                gap: 10px;
+            }
+
+            .section {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>SOCCER SCORE</h1>
+    <p>Match Centre</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="live.html">Live</a>
+    <a href="news.html">News</a>
+    <a href="competitions.html">Competitions</a>
+</nav>
+
+<main class="container">
+
+    <a class="back" href="index.html">
+        ← Back to Fixtures
+    </a>
+
+    <!-- MATCH SCORE -->
+
+    <div class="match-card">
+
+        <div class="competition">
+            Premier League
+        </div>
+
+        <span class="live">
+            LIVE
+        </span>
+
+        <div class="teams">
+
+            <div class="team">
+                Arsenal
+            </div>
+
+            <div class="score-area">
+
+                <div class="score">
+                    2 - 1
+                </div>
+
+                <div class="minute">
+                    67'
+                </div>
+
+            </div>
+
+            <div class="team">
+                Chelsea
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MATCH EVENTS -->
+
+    <div class="section">
+
+        <h2>⚽ Match Events</h2>
+
+        <div class="event">
+            <span class="event-time">23'</span>
+            <span class="event-name">
+                ⚽ Arsenal Goal
+            </span>
+            <strong>1 - 0</strong>
+        </div>
+
+        <div class="event">
+            <span class="event-time">32'</span>
+            <span class="event-name">
+                ⚽ Arsenal Goal
+            </span>
+            <strong>2 - 0</strong>
+        </div>
+
+        <div class="event">
+            <span class="event-time">51'</span>
+            <span class="event-name">
+                ⚽ Chelsea Goal
+            </span>
+            <strong>2 - 1</strong>
+        </div>
+
+        <div class="event">
+            <span class="event-time">58'</span>
+            <span class="event-name">
+                🟨 Chelsea Yellow Card
+            </span>
+        </div>
+
+        <div class="event">
+            <span class="event-time">64'</span>
+            <span class="event-name">
+                🔄 Arsenal Substitution
+            </span>
+        </div>
+
+        <div class="event">
+            <span class="event-time">67'</span>
+            <span class="event-name">
+                🟥 Chelsea Red Card
+            </span>
+        </div>
+
+        <div class="event">
+            <span class="event-time">70'</span>
+            <span class="event-name">
+                ❌ Arsenal Goal Disallowed
+            </span>
+        </div>
+
+        <div class="event">
+            <span class="event-time">74'</span>
+            <span class="event-name">
+                🩹 Chelsea Player Injury
+            </span>
+        </div>
+
+    </div>
+
+
+    <!-- GOALS & ASSISTS -->
+
+    <div class="section">
+
+        <h2>⚽ Goals & Assists</h2>
+
+        <div class="event">
+            <span class="event-time">23'</span>
+            <span class="event-name">
+                Arsenal — Player Name
+                <br>
+                <small>🅰️ Assist: Player Name</small>
+            </span>
+        </div>
+
+        <div class="event">
+            <span class="event-time">32'</span>
+            <span class="event-name">
+                Arsenal — Player Name
+                <br>
+                <small>🅰️ Assist: Player Name</small>
+            </span>
+        </div>
+
+        <div class="event">
+            <span class="event-time">51'</span>
+            <span class="event-name">
+                Chelsea — Player Name
+                <br>
+                <small>🅰️ Assist: Player Name</small>
+            </span>
+        </div>
+
+    </div>
+
+
+    <!-- INJURIES -->
+
+    <div class="section">
+
+        <h2>🩹 Injuries</h2>
+
+        <div class="event">
+
+            <span class="event-time">
+                74'
+            </span>
+
+            <span class="event-name">
+                Chelsea — Player Name
+                <br>
+                <small>Injury reported</small>
+            </span>
+
+        </div>
+
+        <div class="event">
+
+            <span class="event-time">
+                76'
+            </span>
+
+            <span class="event-name">
+                Arsenal — Player Name
+                <br>
+                <small>Forced off injured 🔄</small>
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- LINEUPS -->
+
+    <div class="section">
+
+        <h2>👥 Lineups</h2>
+
+        <div class="lineups">
+
+            <div class="lineup">
+
+                <h3>Arsenal</h3>
+
+                <p>1. Goalkeeper</p>
+                <p>2. Defender</p>
+                <p>3. Defender</p>
+                <p>4. Midfielder</p>
+                <p>5. Midfielder</p>
+                <p>6. Forward</p>
+
+            </div>
+
+            <div class="lineup">
+
+                <h3>Chelsea</h3>
+
+                <p>1. Goalkeeper</p>
+                <p>2. Defender</p>
+                <p>3. Defender</p>
+                <p>4. Midfielder</p>
+                <p>5. Midfielder</p>
+                <p>6. Forward</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUBSTITUTIONS -->
+
+    <div class="section">
+
+        <h2>🔄 Substitutions</h2>
+
+        <div class="event">
+            <span class="event-time">64'</span>
+            <span class="event-name">
+                Arsenal: Player OUT → Player IN
+            </span>
+        </div>
+
+        <div class="event">
+            <span class="event-time">76'</span>
+            <span class="event-name">
+                Chelsea: Player OUT → Player IN
+            </span>
+        </div>
+
+    </div>
+
+
+    <!-- MATCH STATISTICS -->
+
+    <div class="section">
+
+        <h2>📊 Match Statistics</h2>
+
+        <div class="stat">
+
+            <div class="stat-title">
+                <span>Possession</span>
+                <span>58% - 42%</span>
+            </div>
+
+            <div class="stat-bar">
+                <div class="stat-fill possession"></div>
+            </div>
+
+        </div>
+
+        <div class="stat-title">
+            <span>Shots</span>
+            <span>12 - 7</span>
+        </div>
+
+        <br>
+
+        <div class="stat-title">
+            <span>Shots on Target</span>
+            <span>6 - 3</span>
+        </div>
+
+        <br>
+
+        <div class="stat-title">
+            <span>Corners</span>
+            <span>6 - 3</span>
+        </div>
+
+        <br>
+
+        <div class="stat-title">
+            <span>Fouls</span>
+            <span>9 - 12</span>
+        </div>
+
+        <br>
+
+        <div class="stat-title">
+            <span>Yellow Cards</span>
+            <span>2 - 3</span>
+        </div>
+
+        <br>
+
+        <div class="stat-title">
+            <span>Red Cards</span>
+            <span>0 - 1</span>
+        </div>
+
+    </div>
+
+
+    <!-- PLAYER RATINGS -->
+
+    <div class="section">
+
+        <h2>⭐ Player Ratings</h2>
+
+        <h3>Arsenal</h3>
+
+        <div class="rating">
+            <span>Arsenal Player 1</span>
+            <span class="rating-number">8.5</span>
+        </div>
+
+        <div class="rating">
+            <span>Arsenal Player 2</span>
+            <span class="rating-number">8.1</span>
+        </div>
+
+        <div class="rating">
+            <span>Arsenal Player 3</span>
+            <span class="rating-number">7.7</span>
+        </div>
+
+        <br>
+
+        <h3>Chelsea</h3>
+
+        <div class="rating">
+            <span>Chelsea Player 1</span>
+            <span class="rating-number">7.8</span>
+        </div>
+
+        <div class="rating">
+            <span>Chelsea Player 2</span>
+            <span class="rating-number">7.2</span>
+        </div>
+
+        <div class="rating">
+            <span>Chelsea Player 3</span>
+            <span class="rating-number">6.9</span>
+        </div>
+
+    </div>
+
+</main>
+
+<footer class="footer">
+    <p>© 2026 Soccer Score</p>
+    <p>Football scores, news and updates</p>
+</footer>
+
+</body>
+</html>
